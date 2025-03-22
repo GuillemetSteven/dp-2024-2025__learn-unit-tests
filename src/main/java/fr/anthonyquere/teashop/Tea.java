@@ -1,5 +1,7 @@
 package fr.anthonyquere.teashop;
 
+import java.util.function.IntPredicate;
+
 public class Tea {
     private String name;
     private int steepingTimeSeconds;

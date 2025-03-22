@@ -1,6 +1,6 @@
 package fr.anthonyquere.TeaShop;
-
-import fr.anthonyquere.fizzbuzz.FizzBuzz;
+import fr.anthonyquere.teashop.Tea;
+import fr.anthonyquere.teashop.TeaShop;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

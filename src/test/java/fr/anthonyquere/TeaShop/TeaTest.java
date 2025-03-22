@@ -42,15 +42,40 @@ public class TeaTest {
     void should_set_ideal_temperature_celsius() {
         // Arrange
         Tea tea = new Tea("RandomName", 180, 95, false);
-        System.out.println("Initial temp : " + tea.getIdealTemperatureCelsius());
         int newTemperature = 150;
 
         // Act
         tea.setIdealTemperatureCelsius(newTemperature);
-        System.out.println("New temp : " + tea.getIdealTemperatureCelsius());
 
         // Assert
         assertThat(tea.getIdealTemperatureCelsius()).isEqualTo(newTemperature);
     }
+
+    @Test
+    void negative_temperature_is_crazy_for_tea(){
+        //Arrange
+        Tea tea = new Tea("RandomName", 180, 90, true);
+        int negativeTemp = -10;
+
+        // Act
+        tea.setIdealTemperatureCelsius(negativeTemp);
+
+        // Assert
+        assertThat(tea.getIdealTemperatureCelsius()).isLessThan(0);
+    }
+
+    @Test
+    void negative_steeping_time_is_not_achievable_for_tea() {
+        // Arrange
+        Tea tea = new Tea("RandomName", 180, 90, true);
+        int negativeTime = -10;
+
+        // Act
+        tea.setSteepingTimeSeconds(negativeTime);
+
+        // Assert
+        assertThat(tea.getSteepingTimeSeconds()).isLessThan(0);
+    }
+
 
 }
